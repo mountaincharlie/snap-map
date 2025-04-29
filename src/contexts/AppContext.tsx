@@ -16,7 +16,7 @@ type Action =
 // --- Initial state
 const initialState: AppState = {
   mapZoom: 3,
-  mapCenterCoords: [-0.3, 51.5],
+  mapCenterCoords: [1951190.97, 3367513.89],
 };
 
 // --- Reducer function
