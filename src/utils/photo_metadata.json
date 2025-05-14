@@ -1,0 +1,121 @@
+{
+  "photo-1": 
+    {
+      "photo_id": 1,
+      "photo_url": "./aarhus_building_tops.JPG",
+      "photo_name": "Aarhus Building View",
+      "photo_location_country_string": "Denmark",
+      "photo_closest_location_string": "Aarhus",
+      "photo_location_coords_3857": {
+        "long": 1135805.2235,
+        "lat": 7587617.0466
+      },
+      "photo_description": "",
+      "photo_month_year": "03-2024",
+      "photo_taken_on": "Asahi Pentax Spotmatic F",
+      "photo_format": "film",
+      "photo_film_type": "Kodak Gold 200"
+    },
+  "photo-2": 
+    {
+      "photo_id": 2,
+      "photo_url": "./cyprus_sunset_clouds.JPG",
+      "photo_name": "Cyprus Sunset Clouds",
+      "photo_location_country_string": "Cyprus",
+      "photo_closest_location_string": "Aphrodite's Beach",
+      "photo_location_coords_3857": {
+        "long": 3632957.264,
+        "lat": 4118503.610
+      },
+      "photo_description": "",
+      "photo_month_year": "12-2024",
+      "photo_taken_on": "Asahi Pentax Spotmatic F",
+      "photo_format": "film",
+      "photo_film_type": "Kodak Gold 200"
+    },
+  "photo-3": 
+    {
+      "photo_id": 3,
+      "photo_url": "./eastbourne_double_exposure.JPG",
+      "photo_name": "Eastbourne Double Exposure",
+      "photo_location_country_string": "England",
+      "photo_closest_location_string": "Eastbourne",
+      "photo_location_coords_3857": {
+        "long": 32494.16,
+        "lat": 6580146.55
+      },
+      "photo_description": "",
+      "photo_month_year": "04-2025",
+      "photo_taken_on": "YashicaFlex Model C",
+      "photo_format": "film",
+      "photo_film_type": "Ilford Black and White 120mm"
+    },
+  "photo-4": 
+    {
+      "photo_id": 4,
+      "photo_url": "./montreal_clouds.JPG",
+      "photo_name": "Montréal Clouds",
+      "photo_location_country_string": "Canada",
+      "photo_closest_location_string": "Montréal",
+      "photo_location_coords_3857": {
+        "long": -8187704.40,
+        "lat": 5701916.93
+      },
+      "photo_description": "",
+      "photo_month_year": "09-2024",
+      "photo_taken_on": "Asahi Pentax Spotmatic F",
+      "photo_format": "film",
+      "photo_film_type": "Kodak Gold 200"
+    },
+  "photo-5": 
+    {
+      "photo_id": 5,
+      "photo_url": "./georgia_mt_kazbegi.jpeg",
+      "photo_name": "Mount Kazbegi",
+      "photo_location_country_string": "Georgia",
+      "photo_closest_location_string": "Stepantsminda",
+      "photo_location_coords_3857": {
+        "long": 4972318.83,
+        "lat": 5262921.33
+      },
+      "photo_description": "",
+      "photo_month_year": "04-2025",
+      "photo_taken_on": "Asahi Pentax Spotmatic F",
+      "photo_format": "film",
+      "photo_film_type": "Kodak Gold 200"
+    },
+  "photo-6": 
+    {
+      "photo_id": 6,
+      "photo_url": "./pompeii_vertical.JPG",
+      "photo_name": "Pompeii Mountain View",
+      "photo_location_country_string": "Italy",
+      "photo_closest_location_string": "Archaeological Park of Pompeii",
+      "photo_location_coords_3857": {
+        "long": 1612718.86,
+        "lat": 4975639.22
+      },
+      "photo_description": "",
+      "photo_month_year": "01-2025",
+      "photo_taken_on": "Asahi Pentax Spotmatic F",
+      "photo_format": "film",
+      "photo_film_type": "Kodak Gold 200"
+    },
+  "photo-7": 
+    {
+      "photo_id": 7,
+      "photo_url": "./portland_sunset_moon.JPG",
+      "photo_name": "Portland Moon at Sunset",
+      "photo_location_country_string": "United States",
+      "photo_closest_location_string": "Portland, Maine",
+      "photo_location_coords_3857": {
+        "long": -7821407.61,
+        "lat": 5412591.60
+      },
+      "photo_description": "",
+      "photo_month_year": "09-2025",
+      "photo_taken_on": "Asahi Pentax Spotmatic F",
+      "photo_format": "film",
+      "photo_film_type": "Kodak Gold 200"
+    }
+}
