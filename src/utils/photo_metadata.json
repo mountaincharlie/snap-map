@@ -13,7 +13,7 @@
       "photo_description": "",
       "photo_month_year": "03-2024",
       "photo_taken_on": "Asahi Pentax Spotmatic F",
-      "photo_format": "film",
+      "photo_format": "Film",
       "photo_film_type": "Kodak Gold 200"
     },
   "photo-2": 
@@ -30,7 +30,7 @@
       "photo_description": "",
       "photo_month_year": "12-2024",
       "photo_taken_on": "Asahi Pentax Spotmatic F",
-      "photo_format": "film",
+      "photo_format": "Film",
       "photo_film_type": "Kodak Gold 200"
     },
   "photo-3": 
@@ -47,7 +47,7 @@
       "photo_description": "",
       "photo_month_year": "04-2025",
       "photo_taken_on": "YashicaFlex Model C",
-      "photo_format": "film",
+      "photo_format": "Film",
       "photo_film_type": "Ilford Black and White 120mm"
     },
   "photo-4": 
@@ -64,14 +64,14 @@
       "photo_description": "",
       "photo_month_year": "09-2024",
       "photo_taken_on": "Asahi Pentax Spotmatic F",
-      "photo_format": "film",
+      "photo_format": "Film",
       "photo_film_type": "Kodak Gold 200"
     },
   "photo-5": 
     {
       "photo_id": 5,
-      "photo_url": "./georgia_mt_kazbegi.jpeg",
-      "photo_name": "Mount Kazbegi",
+      "photo_url": "./georgia_mkinvartsveri.jpeg",
+      "photo_name": "Mkinvartsveri",
       "photo_location_country_string": "Georgia",
       "photo_closest_location_string": "Stepantsminda",
       "photo_location_coords_3857": {
@@ -81,7 +81,7 @@
       "photo_description": "",
       "photo_month_year": "04-2025",
       "photo_taken_on": "Asahi Pentax Spotmatic F",
-      "photo_format": "film",
+      "photo_format": "Film",
       "photo_film_type": "Kodak Gold 200"
     },
   "photo-6": 
@@ -98,7 +98,7 @@
       "photo_description": "",
       "photo_month_year": "01-2025",
       "photo_taken_on": "Asahi Pentax Spotmatic F",
-      "photo_format": "film",
+      "photo_format": "Film",
       "photo_film_type": "Kodak Gold 200"
     },
   "photo-7": 
@@ -115,7 +115,7 @@
       "photo_description": "",
       "photo_month_year": "09-2025",
       "photo_taken_on": "Asahi Pentax Spotmatic F",
-      "photo_format": "film",
+      "photo_format": "Film",
       "photo_film_type": "Kodak Gold 200"
     }
 }

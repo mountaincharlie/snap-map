@@ -24,7 +24,9 @@ export type PhotoData = {
 };
 
 
-export const createOpenLayerFeatures = (photoData: PhotoData) => {
+// creating openlayers features from the Photo data (only needs the coords, id and the name for hover effect)
+export const createOpenLayerFeatures = (photoData: PhotoData | undefined) => {
+  if (photoData === undefined) return [];
 
   // list of ol feature point objects
   let featureData: Feature<Point>[] = [];
@@ -45,3 +47,10 @@ export const createOpenLayerFeatures = (photoData: PhotoData) => {
 
   return featureData;
 }; 
+
+// get photo data object by id
+export const getPhotoDataById = (photoId: number, photoData: PhotoData | undefined) => {
+  if (photoData === undefined) return undefined;
+
+  return Object.values(photoData).find(photo => photo.photo_id === photoId);
+};

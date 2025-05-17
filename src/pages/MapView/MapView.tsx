@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useContext, useEffect, useMemo } from 'react';
+import { AppContext } from "../../contexts/AppContext";
 import OLMap from '../../components/OLMap/OLMap';
+import Modal from '../../components/Modal/Modal';
+import PhotoDetails from '../../components/PhotoDetails/PhotoDetails';
 import { FaUnsplash, FaGithub, FaReact } from "react-icons/fa";
 import { SiOpenlayers, SiTypescript } from "react-icons/si";
 import photo_metadata_raw from "../../utils/photo_metadata.json";
@@ -10,25 +13,59 @@ import './MapView.scss';
 
 const MapView: React.FC = () => {
 
+  // state management from the app context
+    const {  
+      selectedPhotoDetails,
+      photoMetadata,
+      setPhotoMetadata,
+      photoModalOpen,
+      setPhotoModalOpen,
+    } = useContext(AppContext);
+
   // footer copyright year
   let copyrightYear = new Date().getFullYear();
 
-  // get the raw metadata with the PhotoData type
-  const photo_metadata = photo_metadata_raw as PhotoData;
+  // set photoMetadata in context as PhotoData type
+  useEffect(() => {
+    setPhotoMetadata(photo_metadata_raw as PhotoData);
+  }, []);
 
-  // for each item in photo_metadata create a feature with geometry, id and title
-  const photoFeatures = createOpenLayerFeatures(photo_metadata);
+  // create features only if there is photoMetadata
+  const photoFeatures = useMemo(() => {
+    if(!photoMetadata) return undefined;
+    return createOpenLayerFeatures(photoMetadata);
+  }, [photoMetadata])
+
+  const handleClosePhotoModal = () => {
+    // close modal
+    setPhotoModalOpen(false);
+
+    // unset selcted photo  - TODO: find a way to unselect the feature is better
+    // setSelectedPhotoDetails(undefined);
+  };
   
   return (
     <div className="mapview">
       <div className="mapview-header">
         SNAP MAP
       </div>
+
       <div className="mapview-content">
+
+        {/* photo modal */}
+        <Modal 
+          isOpen={photoModalOpen}
+          onClose={handleClosePhotoModal}
+          title={selectedPhotoDetails?.photo_name}
+          content={<PhotoDetails />}
+        />
+
+        {/* map */}
         <div id="map-container" className="map-view-content-map-container">
           <OLMap photoFeatures={photoFeatures} />
         </div>
       </div>
+
       <div className="mapview-footer">
         <div className="mapview-footer-item">
           © charlieharland {copyrightYear}

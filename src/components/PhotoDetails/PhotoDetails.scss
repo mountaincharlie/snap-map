@@ -1,0 +1,27 @@
+@use '../../styles/variables.scss' as vars;
+
+.photo-details {
+  color: vars.$background-color;
+
+  &-photo-container{
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &-info-container {
+
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.25em 1em;
+
+    .info-item {
+      flex: 1 1 45%;
+
+      svg {
+        margin-right: 0.5em;
+      }
+    }
+  }
+}

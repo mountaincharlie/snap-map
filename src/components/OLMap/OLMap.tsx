@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useContext } from "react";
 import { AppContext } from "../../contexts/AppContext";
+import { getPhotoDataById } from "../../utils/mapUtils";
 import Map from "ol/Map";
 import View from "ol/View";
 import TileLayer from "ol/layer/Tile";
@@ -9,32 +10,35 @@ import Point from 'ol/geom/Point.js';
 import VectorSource from "ol/source/Vector";
 import VectorLayer from "ol/layer/Vector";
 import { Style, Circle, Fill, Stroke } from "ol/style";
+import { click } from "ol/events/condition";
+import { Select } from "ol/interaction";
 import "ol/ol.css";
 import './OLMap.scss';
 
 
-// prop types for OL map component
+// ol map props interface
 type OLMapProps = {
-  photoFeatures: Feature<Point>[];
+  photoFeatures: Feature<Point>[] | undefined;
 };
 
 
 const OLMap: React.FC<OLMapProps> = ({ photoFeatures }) => {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
 
-  console.log(typeof photoFeatures)
-
   // state management from the app context
   const {  
     mapRef,
     mapZoom,
     mapCenterCoords,
+    setSelectedPhotoDetails,
+    photoMetadata,
+    setPhotoModalOpen,
   } = useContext(AppContext);
 
   // handle the setup of the map (only changes on specific map related changes)
   useEffect(() => {
     // Check if map already exists (prevents remounting) 
-    if (!mapContainerRef?.current || mapRef.current) return;
+    if (!mapContainerRef?.current || mapRef.current || !photoFeatures) return;
 
     var vectorLayers = [];
 
@@ -81,7 +85,44 @@ const OLMap: React.FC<OLMapProps> = ({ photoFeatures }) => {
       map.setTarget(undefined); // Cleanup on unmount
       mapRef.current = null;
     };
-  }, [mapCenterCoords, mapZoom, mapRef]);
+  }, [mapCenterCoords, mapZoom, mapRef, photoFeatures]);
+
+  // handling select interaction
+  useEffect(() => {
+    if (!mapRef.current) return;
+
+    let interaction;
+
+    // set up a new select interaction 
+    interaction = new Select({
+      multi: true,
+      condition: click,
+    });
+
+    // add interaction to the map if valid
+    if (interaction) {
+      mapRef.current.addInteraction(interaction);
+    }
+
+    // set the selected photo by its id
+    interaction.on("select", (event) => {
+      const features = event.target.getFeatures().getArray();
+      if (features.length === 0) {
+        return;
+      }
+      const selectedFeature = features[0];
+      const photoId = selectedFeature.get('id');
+
+      const selectedPhoto = getPhotoDataById(photoId, photoMetadata);
+
+      if (selectedPhoto) {
+        setSelectedPhotoDetails(selectedPhoto);
+        setPhotoModalOpen(true);
+      }
+    });
+
+
+  }, [mapRef.current, photoMetadata])
 
   return <div ref={mapContainerRef} className="ol-map"/>;
 };
